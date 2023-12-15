@@ -1,0 +1,81 @@
+<app-exercice1></app-exercice1>
+
+<div class="container mt-3">
+  <h2>Ajouter un CLIENT</h2>
+  <form (ngSubmit)="ajouterEtudiant()" #etudiantForm="ngForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="nom" class="form-label">Nom:</label>
+          <input type="text" id="nom" name="nom" [(ngModel)]="nouvel.nom" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="prenom" class="form-label">Prénom:</label>
+          <input type="text" id="prenom" name="prenom" [(ngModel)]="nouvel.prenom" class="form-control" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="adresse" class="form-label">Adresse:</label>
+          <input type="text" id="adresse" name="adresse" [(ngModel)]="nouvel.adresse" class="form-control" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">   <label for="ville" class="form-label">Ville:</label>
+      <input type="text" id="ville" name="ville" [(ngModel)]="nouvel.ville" class="form-control" required>
+     </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+     <div class="mb-3">
+         <label for="etat" class="form-label">État:</label>
+      <input type="text" id="etat" name="etat" [(ngModel)]="nouvel.etat" class="form-control" required>
+       </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="total" class="form-label">ORDER TOTAL:</label>
+          <input type="number" id="total" name="total" [(ngModel)]="nouvel.total" class="form-control" required>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="etudiantForm.invalid" class="btn btn-primary">Ajouter</button>
+  </form>
+
+  <br>
+
+  <h2>CUSTOMERS</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Adresse</th>
+        <th>Ville</th>
+        <th>État</th>
+        <th>ORDER TOTAL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let etudiant of etudiants; let i = index">
+        <td>
+          <img src="/assets/image/img{{ i + 1 }}.jpg" alt="Image de l'étudiant" style="max-width: 50px;">
+        </td>
+        <td>{{ etudiant.nom }}</td>
+        <td>{{ etudiant.prenom }}</td>
+        <td>{{ etudiant.adresse }}</td>
+        <td>{{ etudiant.ville }}</td>
+        <td>{{ etudiant.etat }}</td>
+        <td>{{ etudiant.total }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

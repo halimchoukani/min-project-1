@@ -1,0 +1,29 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+div {
+  background-color: aquamarine;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+select {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: aquamarine;
+}
+
+optgroup {
+  font-weight: bold;
+  color: #007bff;
+}
+
+option {
+  color: #333;
+}
